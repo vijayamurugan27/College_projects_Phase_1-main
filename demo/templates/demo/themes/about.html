@@ -1,0 +1,204 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block title %}
+    <!-- page title -->
+<section class="page-title-alt bg-primary position-relative">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h1 class="text-white font-tertiary">About Me</h1>
+        </div>
+      </div>
+    </div>
+    <!-- background shapes -->
+    <img src="{% static 'images/illustrations/leaf-bg-top.png' %}" alt="illustrations" class="bg-shape-1 w-100">
+    <img src="{% static 'images/illustrations/dots-group-sm.png' %}" alt="illustrations" class="bg-shape-2">
+    <img src="{% static 'images/illustrations/leaf-yellow.png' %}" alt="illustrations" class="bg-shape-3">
+    <img src="{% static 'images/illustrations/leaf-orange.png' %}" alt="illustrations" class="bg-shape-4">
+    <img src="{% static 'images/illustrations/dots-group-cyan.png' %}" alt="illustrations" class="bg-shape-5">
+    <img src="{% static 'images/illustrations/leaf-cyan-lg.png' %}" alt="illustrations" class="bg-shape-6">
+  </section>
+  <!-- /page title -->
+  
+  <!-- about -->
+  <section class="section pt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <p>Hello and welcome to the Django training course!<br><br> My name is <strong>Vijayamurugan and I am both a trainer and a developer with experience in using Django, AI, ML, DL and DS.</strong>
+             I have been working with Django for several years and have built a number of web applications and AI, ML, DL and DS projects with it. In this course, we will be learning the basics of Django and 
+             how to use it to create web applications. By the end of this course,
+             you should have a solid understanding of the fundamentals of Django and be able to start building your own web applications with it. Let's get started!</p>
+        </div>
+        <div class="col-md-4 text-center drag-lg-top">
+          <div class="shadow-down mb-4">
+            <img src="{% static 'img/2603.jpg' %}" alt="author" class="img-fluid w-100 rounded-lg border-thick border-white">
+          </div>
+          <img src="{% static 'imag/signature.png' %}" alt="signature" class="img-fluid">
+          <h4>Vijayamurugan</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /about -->
+  
+  <!-- Work Process -->
+  <section class="section">
+    <div class="container">
+      <div class="row justify-content-around">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-title">Work Process</h2>
+        </div>
+        <div class="col-lg-3 col-md-4 text-center hover-shadow pt-3">
+          <div class="">
+            <img src="{% static 'images/icons/plan.png' %}" class="mb-4" alt="icon">
+            <h4 class="mb-4">Research and Plan</h4>
+            <p>We are the forerunner's in Research and Developing Training Content of New technologies, modules, libraries.<br></p>
+            <p>Simple, Cost effective, Time bound </p>  
+            <p>Decoding the Complex concepts, Explaining it in a simple terms. So that  the our customers can understand in a very simple way and implement in their projects.</p><br>
+        
+            
+            
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 text-center hover-shadow pt-3">
+          <img src="{% static 'images/icons/design.png' %}" class="mb-4" alt="icon">
+          <h4 class="mb-4">Design and Develop</h4>
+          <p>We design and develop Training modules according to the Company demand and Request.</p><br><br>
+          <p>Our main USP is Training Latest Technologies in a clear, simpler, Cost Effective in a very small period of time.</p><br>
+          <p> we have taken taken enormous amount of time and effort to develop content , 
+            So that every thing aligns perfectly for clients needs. Which is our USP. So that it is cost effective for the future generations and our clients.</p> <br> 
+          
+          
+          
+        </div>
+        <div class="col-lg-3 col-md-4 text-center hover-shadow pt-3">
+          <img src="{% static 'images/icons/print.png' %}" class="mb-4" alt="icon">
+          <h4 class="mb-4">Deliver</h4>
+          <p>Our delivery model is unique in the Industry that nobody can match. Because of the how our Training modules , Methods, and Delivery Style. That nobody can match.<br>
+          we have strong intuition in believing time and trust as our Gold.<br>
+        Our Training methodology is very simple , precise, and clarity<br>
+         Explaining complex concepts in a very simple manner.  </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ./Work Process -->
+  
+  <!-- team -->
+
+  
+  <section class="section bg-cover" data-background="{% static 'images/backgrounds/team-bg.png' %}">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <h2 class="section-title">My Team</h2>
+        </div>
+        {% for team in team %}
+
+            
+
+                <div class="col-md-4 col-sm-6 mb-4 mb-md-0">
+                  <div class="card text-center">
+                    <!-- <img src="{% static 'images/team/member-1.png' %}" class="card-img-top"> -->
+                    <!-- <a href="{{ team.pictures.url }}"> -->
+                      {% if team.name != Vidhya %}
+                        <img src="{{ team.pictures.url }}" alt="shirts" style="max-height:200px" class="card-img-top">
+                        <div class="card-body">
+                        <h4 class="card-title"> {{team.name}} </h4>
+                        <p class="text-light font-secondary">{{team.expertise}}</p>
+                        <p class="text-light font-secondary">{{team.experience}}</p>
+                      {% endif %}
+                    </div>
+                  </div>
+                </div>
+
+            
+
+        {% endfor %}
+
+        <!-- <div class="col-md-4 col-sm-6 mb-4 mb-md-0">
+          <div class="card text-center">
+            <img src="{% static 'images/team/member-2.png' %}" class="card-img-top">
+            <div class="card-body">
+              <h4 class="card-title">Jack Schenziwe</h4>
+              <p class="text-light font-secondary">Project Manager</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6 mb-4 mb-md-0">
+          <div class="card text-center">
+            <img src="{% static 'images/team/member-3.png' %}" class="card-img-top">
+            <div class="card-body">
+              <h4 class="card-title">Jack Schenziwe</h4>
+              <p class="text-light font-secondary">Project Manager</p>
+            </div>
+          </div>
+        </div> -->
+
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- /team -->
+  
+  <!-- <hr><hr> -->
+
+
+  <!-- clients -->
+  
+
+  <section class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <h2 class="section-title">My Clients</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="client-logo-slider d-flex align-items-center">
+            <a href="{% static 'demo:contact.html' %}" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid"
+              src="{% static  'imag/resize/APC.png' %}" alt="client-logo"></a>
+          <a href="{% static 'demo:contact.html' %}" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid"
+              src="{% static  'imag/resize/Bea.png' %}" alt="client-logo"></a>
+          <a href="{% static 'demo:contact.html' %}" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid"
+              src="{% static  'imag/resize/Bos.png' %}" alt="client-logo"></a>
+          <a href="{% static 'demo:contact.html' %}" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid"
+              src="{% static  'imag/resize/ETH.png' %}" alt="client-logo"></a>
+          <a href="{% static 'demo:contact.html' %}" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid"
+              src="{% static  'imag/resize/HCL.png' %}" alt="client-logo"></a>
+          <a href="{% static 'demo:contact.html' %}" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid"
+              src="{% static  'imag/resize/kva.jpg' %}" alt="client-logo"></a>
+          <a href="{% static 'demo:contact.html' %}" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid"
+              src="{% static  'imag/resize/Min.png' %}" alt="client-logo"></a>
+          <a href="{% static 'demo:contact.html' %}" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid"
+              src="{% static  'imag/resize/sev.png' %}" alt="client-logo"></a>
+          <a href="{% static 'demo:contact.html' %}" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid"
+              src="{% static  'imag/resize/Ski.png' %}" alt="client-logo"></a>
+          <a href="{% static 'demo:contact.html' %}" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid"
+              src="{% static  'imag/resize/tal.png' %}" alt="client-logo"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /clients -->
+  
+      
+    {% endblock %}
+    
+    
+</body>
+</html>

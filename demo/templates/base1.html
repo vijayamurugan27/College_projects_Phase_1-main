@@ -1,0 +1,139 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  ================================================== -->
+  <meta charset="utf-8">
+  <title>Kross - Creative Portfolio Template</title>
+
+  <!-- Mobile Specific Metas
+  ================================================== -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Creative Portfolio Template">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="author" content="Themefisher">
+  <meta name="generator" content="Themefisher Kross Template v1.0">
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon.png' %}" />
+  
+  <!-- ** Plugins Needed for the Project ** -->
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="{% static 'plugins/bootstrap/bootstrap.min.css' %}">
+  <!-- slick slider -->
+  <link rel="stylesheet" href="{% static 'plugins/slick/slick.css' %}">
+  <!-- themefy-icon -->
+  <link rel="stylesheet" href="{% static 'plugins/themify-icons/themify-icons.css' %}">
+
+  <!-- Main Stylesheet -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+  <!-- Drop down menu coloura -->
+
+</head>
+<body>
+  
+
+<header class="navigation fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <a class="navbar-brand font-tertiary h3" href="{% url 'demo:home' %}"><img src="{% static 'img/log.png' %}" alt="Myself"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+      aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse text-center" id="navigation">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="{% url 'demo:home' %}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'demo:about' %}">about</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'demo:blog' %}">Django</a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="{% url 'demo:portfolio' %}">Portfolio</a>
+        </li> -->
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'demo:training' %}">Training</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'demo:contact' %}">Contact</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle navbar-dark" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  >
+            Projects
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #41228E;">
+            <a class="dropdown-item" href="{% url 'library:home' %}" style = "background-color: #41228E; color:white ">Library</a>
+            <a class="dropdown-item" href="{% url 'shop:home' %}" style = "background-color: #41228E; color:white;">Shop</a>
+            <a class="dropdown-item" href="{% url 'landingpage:home' %}" style = "background-color: #41228E; color:white;">Landing Page</a>
+            <a class="dropdown-item" href="{% url 'photography:home' %}" style = "background-color: #41228E; color:white;">Photography</a>
+            <!-- <a class="dropdown-item" href="{% url 'shop:home' %}" style = "background-color: #41228E; color:white;">Library</a> -->
+            <a class="dropdown-item" href="{% url 'restaurant:home' %}" style = "background-color: #41228E; color:white;">Restaurant</a>
+            
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<!-- page title -->
+{% block title %}
+
+{% endblock %}
+
+ <!-- footer -->
+<footer class="bg-dark footer-section">
+  <div class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h5 class="text-light">Email</h5>
+          <p class="text-white paragraph-lg font-secondary">vijayamurugan2172@gmail.com</p>
+        </div>
+        <div class="col-md-4">
+          <h5 class="text-light">Phone</h5>
+          <p class="text-white paragraph-lg font-secondary">+91-9715449095</p>
+        </div>
+        <div class="col-md-4">
+          <h5 class="text-light">Address</h5>
+          <p class="text-white paragraph-lg font-secondary">Anna Nagar west Extension, Chennai -600101</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="border-top text-center border-dark py-5">
+    <!-- <p class="mb-0 text-light">Copyright &copy;<script>
+        var CurrentYear = new Date().getFullYear()
+        document.write(CurrentYear)
+      </script> Designed &amp; Developed by <a class="text-white-50" href="{% static 'Themefisher' %}">NLT</a></p>
+      
+      <p class="mb-0 text-light">Copyright &copy;<script>
+        var CurrentYear = new Date().getFullYear()
+        document.write(CurrentYear)
+      </script> Designed &amp; Developed by <a class="text-white-50" href="{% static 'Themefisher' %}">NLT</a></p> -->
+  </div>
+</footer>
+<!-- /footer -->
+ 
+<!-- jQuery -->
+<script src="{% static 'plugins/jQuery/jquery.min.js' %}"></script>
+<!-- Bootstrap JS -->
+<script src="{% static 'plugins/bootstrap/bootstrap.min.js' %}"></script>
+<!-- slick slider -->
+<script src="{% static 'plugins/slick/slick.min.js' %}"></script>
+<!-- filter -->
+<script src="{% static 'plugins/shuffle/shuffle.min.js' %}"></script>
+
+<!-- Main Script -->
+<script src="{% static 'js/script.js' %}"></script>
+
+</body>
+</html>

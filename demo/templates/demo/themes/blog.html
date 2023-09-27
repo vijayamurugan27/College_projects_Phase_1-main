@@ -1,0 +1,170 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block title %} 
+    
+<!-- page title -->
+<section class="page-title bg-primary position-relative">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <h1 class="text-white font-tertiary">Blogs</h1>
+        </div>
+      </div>
+    </div>
+    <!-- background shapes -->
+    <img src="{% static 'images/illustrations/page-title.png' %}" alt="illustrations" class="bg-shape-1 w-100">
+    <img src="{% static 'images/illustrations/leaf-pink-round.png' %}" alt="illustrations" class="bg-shape-2">
+    <img src="{% static 'images/illustrations/dots-cyan.png' %}" alt="illustrations" class="bg-shape-3">
+    <img src="{% static 'images/illustrations/leaf-orange.png' %}" alt="illustrations" class="bg-shape-4">
+    <img src="{% static 'images/illustrations/leaf-yellow.png' %}" alt="illustrations" class="bg-shape-5">
+    <img src="{% static 'images/illustrations/dots-group-cyan.png' %}" alt="illustrations" class="bg-shape-6">
+    <img src="{% static 'images/illustrations/leaf-cyan-lg.png' %}" alt="illustrations" class="bg-shape-7">
+  </section>
+  <!-- /page title -->
+  
+  <!-- blog -->
+  <section class="section">
+    <div class="container">
+      <div class="row">
+        {% for blog in blog %}
+          <div class="col-lg-4 col-sm-6 mb-4">
+            <article class="card shadow">
+              <a href="{{ blog.pictures.url }}"></a>
+              <img class="rounded card-img-top" src="{{ blog.pictures.url }}" alt="post-thumb" style = "max-height: 200px;">
+              <div class="card-body">
+                <!-- <a href="{{ blog.pictures.url }}">
+                  <img src="{{ blog.pictures.url }}" alt="Blog" style="max-height:200px" class="card-img-top"> -->
+                
+                <h4 class="card-title"><a class="text-dark" href="blogsingle/{{blog.id}}">{{blog.name}}</a>
+                </h4>
+                <p class="cars-text">{{blog.message |truncatewords:30|linebreaks}}</p>
+                <a href="blogsingle/{{blog.id}}"   class="btn btn-xs btn-primary">Read More</a>
+              </div>
+            </article>
+          </div>
+          {% endfor %}
+
+        <!-- <div class="col-lg-4 col-sm-6 mb-4">
+          <article class="card shadow">
+            <img class="rounded card-img-top" src="{% static 'images/blog/post-2.jpg' %}" alt="post-thumb">
+            <div class="card-body">
+              <h4 class="card-title"><a class="text-dark" href="blogsingle/{{i.id}}">Amazon increase income 1.5 Million</a>
+              </h4>
+              <p class="cars-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                incididunt ut labore et
+                dolore magna aliqua.</p>
+              <a href="blogsingle/{{i.id}}" class="btn btn-xs btn-primary">Read More</a>
+            </div>
+          </article>
+        </div>
+        <div class="col-lg-4 col-sm-6 mb-4">
+          <article class="card shadow">
+            <img class="rounded card-img-top" src="{% static 'images/blog/post-3.jpg' %}" alt="post-thumb">
+            <div class="card-body">
+              <h4 class="card-title"><a class="text-dark" href="blogsingle/{{i.id}}">Amazon increase income 1.5 Million</a>
+              </h4>
+              <p class="cars-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                incididunt ut labore et
+                dolore magna aliqua.</p>
+              <a href="blogsingle/{{i.id}}" class="btn btn-xs btn-primary">Read More</a>
+            </div>
+          </article>
+        </div>
+        <div class="col-lg-4 col-sm-6 mb-4">
+          <article class="card shadow">
+            <img class="rounded card-img-top" src="{% static 'images/blog/post-4.jpg' %}" alt="post-thumb">
+            <div class="card-body">
+              <h4 class="card-title"><a class="text-dark" href="blogsingle/{{i.id}}">Amazon increase income 1.5 Million</a>
+              </h4>
+              <p class="cars-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                incididunt ut labore et
+                dolore magna aliqua.</p>
+              <a href="blogsingle/{{i.id}}" class="btn btn-xs btn-primary">Read More</a>
+            </div>
+          </article>
+        </div>
+        <div class="col-lg-4 col-sm-6 mb-4">
+          <article class="card shadow">
+            <img class="rounded card-img-top" src="{% static 'images/blog/post-5.jpg' %}" alt="post-thumb">
+            <div class="card-body">
+              <h4 class="card-title"><a class="text-dark" href="blogsingle/{{i.id}}">Amazon increase income 1.5 Million</a>
+              </h4>
+              <p class="cars-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                incididunt ut labore et
+                dolore magna aliqua.</p>
+              <a href="blogsingle/{{i.id}}" class="btn btn-xs btn-primary">Read More</a>
+            </div>
+          </article>
+        </div>
+        <div class="col-lg-4 col-sm-6 mb-4">
+          <article class="card shadow">
+            <img class="rounded card-img-top" src="{% static 'images/blog/post-2.jpg' %}" alt="post-thumb">
+            <div class="card-body">
+              <h4 class="card-title"><a class="text-dark" href="blogsingle/{{i.id}}">Amazon increase income 1.5 Million</a>
+              </h4>
+              <p class="cars-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                incididunt ut labore et
+                dolore magna aliqua.</p>
+              <a href="blogsingle/{{i.id}}" class="btn btn-xs btn-primary">Read More</a>
+            </div>
+          </article>
+        </div> -->
+
+
+      </div>
+    </div>
+  </section>
+  <!-- /blog -->
+  
+  <!-- clients -->
+  <section class="section bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <h2 class="section-title">My Clients</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="client-logo-slider d-flex align-items-center">
+            <a href="{% static 'demo:contact.html' %}" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid"
+              src="{% static  'imag/resize/APC.png' %}" alt="client-logo"></a>
+          <a href="{% static 'demo:contact.html' %}" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid"
+              src="{% static  'imag/resize/Bea.png' %}" alt="client-logo"></a>
+          <a href="{% static 'demo:contact.html' %}" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid"
+              src="{% static  'imag/resize/Bos.png' %}" alt="client-logo"></a>
+          <a href="{% static 'demo:contact.html' %}" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid"
+              src="{% static  'imag/resize/ETH.png' %}" alt="client-logo"></a>
+          <a href="{% static 'demo:contact.html' %}" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid"
+              src="{% static  'imag/resize/HCL.png' %}" alt="client-logo"></a>
+          <a href="{% static 'demo:contact.html' %}" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid"
+              src="{% static  'imag/resize/kva.jpg' %}" alt="client-logo"></a>
+          <a href="{% static 'demo:contact.html' %}" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid"
+              src="{% static  'imag/resize/Min.png' %}" alt="client-logo"></a>
+          <a href="{% static 'demo:contact.html' %}" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid"
+              src="{% static  'imag/resize/sev.png' %}" alt="client-logo"></a>
+          <a href="{% static 'demo:contact.html' %}" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid"
+              src="{% static  'imag/resize/Ski.png' %}" alt="client-logo"></a>
+          <a href="{% static 'demo:contact.html' %}" class="text-center d-block outline-0 p-4"><img class="d-unset img-fluid"
+              src="{% static  'imag/resize/tal.png' %}" alt="client-logo"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /clients -->
+  
+    {% endblock %}
+    
+</body>
+</html>

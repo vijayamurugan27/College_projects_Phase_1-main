@@ -1,0 +1,148 @@
+{% extends 'base.html' %}
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block title %}
+<!-- page title -->
+<section class="page-title bg-primary position-relative">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <h1 class="text-white font-tertiary">Blogs</h1>
+        </div>
+      </div>
+    </div>
+    <!-- background shapes -->
+    <img src="{% static 'images/illustrations/page-title.png' %}" alt="illustrations" class="bg-shape-1 w-100">
+    <img src="{% static 'images/illustrations/leaf-pink-round.png' %}" alt="illustrations" class="bg-shape-2">
+    <img src="{% static 'images/illustrations/dots-cyan.png' %}" alt="illustrations" class="bg-shape-3">
+    <img src="{% static 'images/illustrations/leaf-orange.png' %}" alt="illustrations" class="bg-shape-4">
+    <img src="{% static 'images/illustrations/leaf-yellow.png' %}" alt="illustrations" class="bg-shape-5">
+    <img src="{% static 'images/illustrations/dots-group-cyan.png' %}" alt="illustrations" class="bg-shape-6">
+    <img src="{% static 'images/illustrations/leaf-cyan-lg.png' %}" alt="illustrations" class="bg-shape-7">
+  </section>
+  <!-- /page title -->
+  
+  <section class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h3 class="font-tertiary mb-3">{{blog}}</h3>
+          
+          <div class="content">
+            <!-- <img src="{% static 'images/blog/post-1.jpg' %}" alt="post-thumb" class="img-fluid rounded float-left mr-5 mb-4"> -->
+            <img  src="{{ blog.pictures.url }}" alt="post-thumb" class = "img-fluid rounded float-left mr-5 mb-4">
+
+
+            <p> <div class="media-body">
+
+            {% if blog.message1 != None %} <h4> {{blog.message1}} </h4><br> {% endif %}
+            {% if blog.message2 != None %} <h4> {{blog.message2}} </h4><br> {% endif %}
+            {% if blog.message3 != None %} <h4> {{blog.message3}} </h4><br> {% endif %}
+            {% if blog.message4 != None %} <h4> {{blog.message4}} </h4><br> {% endif %}
+            {% if blog.message5 != None %} <h4> {{blog.message5}} </h4><br> {% endif %}
+            {% if blog.message6 != None %} <h4> {{blog.message6}} </h4><br> {% endif %}
+            {% if blog.message7 != None %} <h4> {{blog.message7}} </h4><br> {% endif %}
+            {% if blog.message8 != None %} <h4> {{blog.message8}} </h4><br> {% endif %}
+            {% if blog.message9 != None %} <h4> {{blog.message9}} </h4><br> {% endif %}
+            {% if blog.message10 != None %} <h4> {{blog.message10}} </h4><br> {% endif %}
+            <!-- {% if blog.message11 != None %} <h4> {{blog.message11}} </h4><br> {% endif %}
+            {% if blog.message12 != None %} <h4> {{blog.message12}} </h4><br> {% endif %}
+            {% if blog.message13 != None %} <h4> {{blog.message13}} </h4><br> {% endif %}
+            {% if blog.message14 != None %} <h4> {{blog.message14}} </h4><br> {% endif %}
+            {% if blog.message15 != None %} <h4> {{blog.message15}} </h4><br> {% endif %}
+            {% if blog.message16 != None %} <h4> {{blog.message16}} </h4><br> {% endif %}
+            {% if blog.message17 != None %} <h4> {{blog.message17}} </h4><br> {% endif %}
+            {% if blog.message18 != None %} <h4> {{blog.message18}} </h4><br> {% endif %}
+            {% if blog.message19 != None %} <h4> {{blog.message19}} </h4><br> {% endif %}
+            {% if blog.message20 != None %} <h4> {{blog.message20}} </h4><br> {% endif %} -->
+            <a href="{% url 'demo:blog' %}" class="btn btn-xs btn-primary">Return to Blog page.</a>
+          </div>
+          </p>      
+           
+           
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+  <!-- <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h4 class="font-weight-bold mb-3">Comments 03</h4>
+          <div class="bg-gray p-5 mb-4">
+            <div class="media border-bottom py-4">
+              <img src="{% static 'images/user-1.jpg' %}" class="img-fluid align-self-start rounded-circle mr-3" alt="">
+              <div class="media-body">
+                <h5 class="mt-0">Carole Marvin.</h5>
+                <p>15 january 2015 At 10:30 pm</p>
+                <p>Ne erat velit invidunt his. Eum in dicta veniam interesset, harum fuisset te nam ea cu lupta
+                  definitionem.</p>
+                <a href="#!" class="btn btn-transparent btn-sm pl-0">Reply</a>
+                <div class="media my-5">
+                  <img src="{% static 'images/user-2.jpg' %}" class="img-fluid align-self-start rounded-circle mr-3" alt="">
+                  <div class="media-body">
+                    <h5 class="mt-0">Jaquan Rolfson.</h5>
+                    <p>15 january 2015 At 10:30 pm</p>
+                    <p>Ne erat velit invidunt his. Eum in dicta veniam interesset, harum fuisset te nam ea cu lupta
+                      definitionem.</p>
+                    <a href="#!" class="btn btn-transparent btn-sm pl-0">Reply</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="media py-4">
+              <img src="{% static 'images/user-3.jpg' %}" class="img-fluid align-self-start rounded-circle mr-3" alt="">
+              <div class="media-body">
+                <h5 class="mt-0">Bruce Bernier.</h5>
+                <p>15 january 2015 At 10:30 pm</p>
+                <p>Ne erat velit invidunt his. Eum in dicta veniam interesset, harum fuisset te nam ea cu lupta
+                  definitionem.</p>
+                <a href="#!" class="btn btn-transparent btn-sm pl-0">Reply</a>
+              </div>
+            </div>
+          </div>
+          <div class="mt-5">
+            <h4 class="font-weight-bold mb-3 border-bottom pb-3">Leave a Comment</h4>
+            <form action="#" class="row">
+              <div class="col-md-6">
+                <input type="text" class="form-control mb-3" placeholder="First Name" name="fname" id="fname" required>
+                <input type="text" class="form-control mb-3" placeholder="Last Name" name="lname" id="lname" required>
+                <input type="text" class="form-control mb-3" placeholder="Email *" name="mail" id="mail" required>
+              </div>
+              <div class="col-md-6">
+                <textarea name="comment" id="comment" placeholder="Message" class="form-control mb-4"></textarea required>
+                <button type="submit" class="btn btn-primary w-100">Send Message</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+   -->
+   
+
+
+   
+  
+
+
+
+
+
+
+    {% endblock %}    
+</body>
+</html>

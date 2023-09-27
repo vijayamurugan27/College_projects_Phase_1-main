@@ -1,0 +1,68 @@
+{% extends 'base.html' %}  
+
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant home page.</title>
+</head>
+<body>
+    {% block title %}
+
+        
+
+        <!-- page title -->
+<section class="page-title bg-primary position-relative">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <h1 class="text-white font-tertiary">Menu Items.</h1>
+        </div>
+      </div>
+    </div>
+    <!-- background shapes -->
+    <img src="{% static 'images/illustrations/page-title.png' %}" alt="illustrations" class="bg-shape-1 w-100">
+    <img src="{% static 'images/illustrations/leaf-pink-round.png' %}" alt="illustrations" class="bg-shape-2">
+    <img src="{% static 'images/illustrations/dots-cyan.png' %}" alt="illustrations" class="bg-shape-3">
+    <img src="{% static 'images/illustrations/leaf-orange.png' %}" alt="illustrations" class="bg-shape-4">
+    <img src="{% static 'images/illustrations/leaf-yellow.png' %}" alt="illustrations" class="bg-shape-5">
+    <img src="{% static 'images/illustrations/dots-group-cyan.png' %}" alt="illustrations" class="bg-shape-6">
+    <img src="{% static 'images/illustrations/leaf-cyan-lg.png' %}" alt="illustrations" class="bg-shape-7">
+  </section>
+<br><br><br>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+  
+          {% if Ordered_items %}
+                    {% for Ordered_items in Ordered_items %}
+                          <h3>Ordered item: {{Ordered_items.name}}</h3>
+                          <img src="{{ Ordered_items.pictures.url}}" alt="connect" style="max-height:100px">
+                          <h5>Order status : {{Ordered_items.order_status}}</h5>
+                          <h5>Price : {{Ordered_items.price}}</h5>
+                          <h5>Quantity : {{Ordered_items.items}}</h5>
+                          <a href="{% url 'restaurant:home' %}"> Menu</a><br>
+                          <a href = "order/{{Ordered_items.id}}">Change the order</a>
+                          
+                          <br><br>
+                    {% endfor %}
+          {% endif %}
+          <br><br>
+        
+
+        <br><br>
+        <hr>
+        <h3>
+            Total price : {{total}}
+        </h3>
+      </div>
+    </div>
+  </div>
+        <hr>
+        {% endblock %}
+
+   

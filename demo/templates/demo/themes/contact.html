@@ -1,0 +1,145 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  {% load crispy_forms_tags %}  
+    {% block title %}
+    <section class="page-title bg-primary position-relative">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 text-center">
+              <h1 class="text-white font-tertiary">Contacts</h1>
+            </div>
+          </div>
+        </div>
+        <!-- background shapes -->
+  <img src="{% static 'images/illustrations/page-title.png' %}" alt="illustrations" class="bg-shape-1 w-100">
+  <img src="{% static 'images/illustrations/leaf-pink-round.png' %}" alt="illustrations" class="bg-shape-2">
+  <img src="{% static 'images/illustrations/dots-cyan.png' %}" alt="illustrations" class="bg-shape-3">
+  <img src="{% static 'images/illustrations/leaf-orange.png' %}" alt="illustrations" class="bg-shape-4">
+  <img src="{% static 'images/illustrations/leaf-yellow.png' %}" alt="illustrations" class="bg-shape-5">
+  <img src="{% static 'images/illustrations/dots-group-cyan.png' %}" alt="illustrations" class="bg-shape-6">
+  <img src="{% static 'images/illustrations/leaf-cyan-lg.png' %}" alt="illustrations" class="bg-shape-7">
+</section>
+
+
+<section class="section section-on-footer" data-background="{% static 'images/backgrounds/bg-dots.png' %}">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h2 class="section-title">Contact Info</h2>
+      </div>
+      <div class="col-lg-8 mx-auto">
+        <div class="bg-white rounded text-center p-5 shadow-down">
+          <h4 class="mb-80">Contact form</h4>
+          
+          <form  action = 'contact' method="post" class="text-left">
+          <!-- <form  class="row" action = 'contact' method="post"> -->
+            {% csrf_token %}
+            {{form|crispy}}
+            <br>
+            <div>
+                <!-- <input type="submit" value="send" class="btn btn-primary"> -->
+                <button class="btn btn-primary w-100"  type="submit">Send</button>
+            </div>
+
+            
+
+                   
+            
+
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+
+<!-- contact -->
+
+<!-- 
+<section class="section section-on-footer" data-background="images/backgrounds/bg-dots.png">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h2 class="section-title">Contact Info</h2>
+      </div>
+      <div class="col-lg-8 mx-auto">
+        <div class="bg-white rounded text-center p-5 shadow-down">
+          <h4 class="mb-80">Contact Form</h4>
+          <form action="#" class="row">
+
+            <div class="col-md-6">
+              <input type="text" id="name" name="name" placeholder=" Name" class="form-control px-0 mb-4" required>
+            </div>
+            <div class="col-md-6">
+              <input type="email" id="email" name="email" placeholder="Email Address" class="form-control px-0 mb-4" required>
+            </div>
+            <div class="col-md-6">
+              <input type="email" id="email" name="email" placeholder="Mobile Number" class="form-control px-0 mb-4" required>
+            </div>
+            <div class="col-md-6">
+              <input type="email" id="email" name="email" placeholder="College Name" class="form-control px-0 mb-4" required>
+            </div>
+            
+            <div class="col-12">
+              <textarea name="message" id="message" class="form-control px-0 mb-4"
+                placeholder="Message or Enguiry." required></textarea>
+            </div>
+            <div class="col-lg-6 col-10 mx-auto">
+              <button class="btn btn-primary w-100">send</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ -->
+
+<!-- contact -->
+
+<!-- 
+<section class="section section-on-footer" data-background="images/backgrounds/bg-dots.png">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h2 class="section-title">Contact Info</h2>
+      </div>
+      <div class="col-lg-8 mx-auto">
+        <div class="bg-white rounded text-center p-5 shadow-down">
+          <h4 class="mb-80">Contact Form - crispy forms--2</h4>
+        </div>
+          
+            <form action = 'contact' method="post" class="col">
+            {% csrf_token %}
+              {{form|crispy}}
+              
+              <div class = "col-lg-6 col-10 mx-auto">
+                  <button class="btn btn-primary w-100"  type="submit">Send</button>
+              </div>
+
+            
+          </form>
+        
+      </div>
+    </div>
+  </div>
+</section> -->
+
+    {% endblock %}
+    
+    
+</body>
+</html>

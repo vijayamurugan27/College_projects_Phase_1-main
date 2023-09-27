@@ -1,0 +1,63 @@
+{% extends 'base1.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photography-Home page </title>
+</head>
+<body>
+    {% block title %}
+
+    <!-- page title -->
+<section class="page-title bg-primary position-relative">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <h1 class="text-white font-tertiary">Photography-Services .</h1>
+        </div>
+      </div>
+    </div>
+    <!-- background shapes -->
+    <img src="{% static 'images/illustrations/page-title.png' %}" alt="illustrations" class="bg-shape-1 w-100">
+    <img src="{% static 'images/illustrations/leaf-pink-round.png' %}" alt="illustrations" class="bg-shape-2">
+    <img src="{% static 'images/illustrations/dots-cyan.png' %}" alt="illustrations" class="bg-shape-3">
+    <img src="{% static 'images/illustrations/leaf-orange.png' %}" alt="illustrations" class="bg-shape-4">
+    <img src="{% static 'images/illustrations/leaf-yellow.png' %}" alt="illustrations" class="bg-shape-5">
+    <img src="{% static 'images/illustrations/dots-group-cyan.png' %}" alt="illustrations" class="bg-shape-6">
+    <img src="{% static 'images/illustrations/leaf-cyan-lg.png' %}" alt="illustrations" class="bg-shape-7">
+  </section>
+  <!-- /page title -->      
+  <!-- team -->
+            <section class="section bg-cover" data-background="{% static 'images/backgrounds/team-bg.png' %}">
+                <div class="container">
+                    <div class="row">    
+                            {% for i in services %}
+                                <div class="col-md-4 col-sm-6 mb-4 mb-md-0">
+                                    <div class="card text-center">
+                                        <!-- <img src="{% static 'images/team/member-1.png' %}" class="card-img-top"> -->
+                                        <a href="{{ i.pictures.url }}">
+                                            <img src="{{ i.pictures.url }}" alt="shirts" style="max-height:200px" class="card-img-top">
+                                        <div class="card-body">
+                                        <h4 class="card-title">{{i.name|title}}</h4>
+                                        <p class="text-light font-secondary">{{i.price}}</p>
+                                        <p class="text-light font-secondary">{{i.FoodChoice}}</p>
+                                        <p class="text-light font-secondary">{{i.service}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}   
+                 
+                    </div>
+                </div>
+            </section>
+  <!-- team -->
+
+    {% endblock %}
+    
+</body>
+</html>
+
+
