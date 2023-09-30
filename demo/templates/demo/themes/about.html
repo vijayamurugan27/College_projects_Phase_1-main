@@ -107,22 +107,20 @@
 
             
 
-                <div class="col-md-4 col-sm-6 mb-4 mb-md-0">
-                  <div class="card text-center">
-                    <!-- <img src="{% static 'images/team/member-1.png' %}" class="card-img-top"> -->
-                    <!-- <a href="{{ team.pictures.url }}"> -->
-                      {% if team.name != Vidhya %}
-                        <img src="{{ team.pictures.url }}" alt="shirts" style="max-height:200px" class="card-img-top">
-                        <div class="card-body">
-                        <h4 class="card-title"> {{team.name}} </h4>
-                        <p class="text-light font-secondary">{{team.expertise}}</p>
-                        <p class="text-light font-secondary">{{team.experience}}</p>
-                      {% endif %}
-                    </div>
-                  </div>
-                </div>
+               
+          
 
-            
+            <div class="col-md-4 col-sm-6 mb-4 mb-md-0">
+              <div class="card text-center">
+                  <div class="card-body">
+                      <!-- Center the image by adding "text-center" class -->
+                      <img src="{{ team.pictures.url }}" alt="shirts" style="max-height: 200px; max-width: 200px;" class="card-img-top">
+                      <h4 class="card-title"> {{team.name}} </h4>
+                     Skills: <p class="text-light font-secondary">{{team.expertise}}</p>
+                     Experience: <p class="text-light font-secondary">{{team.experience}}</p>
+                  </div>
+              </div>
+          </div>
 
         {% endfor %}
 
